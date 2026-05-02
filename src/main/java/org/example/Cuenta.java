@@ -15,7 +15,7 @@ public abstract class Cuenta {
         this.titular = titular;
         this.saldo = saldo;
     }
-
+    //METODOS
     public abstract void depositar(BigDecimal monto);
 
     public void retirar(BigDecimal monto){
