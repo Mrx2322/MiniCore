@@ -16,24 +16,12 @@ public abstract class Cuenta {
         this.saldo = saldo;
     }
 
-    // Métodos Getter y Setter
-    public String getId() {
-        return id;
-    }
+    public void depositar (){}
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getTitular() {
-        return titular;
-    }
-
-    public void setTitular(String titular) {
-        this.titular = titular;
-    }
-
-    public BigDecimal getSaldo() {
-        return saldo;
+    public void retirar(BigDecimal monto){
+        if (monto.compareTo(saldo) > 0) {
+            throw new IllegalArgumentException("Saldo insuficiente");
+        }
+        saldo = saldo.subtract(monto);
     }
 }
