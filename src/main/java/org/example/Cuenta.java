@@ -16,7 +16,7 @@ public abstract class Cuenta {
         this.saldo = saldo;
     }
 
-    public void depositar (){}
+    public abstract void depositar(BigDecimal monto);
 
     public void retirar(BigDecimal monto){
         if (monto.compareTo(saldo) > 0) {
