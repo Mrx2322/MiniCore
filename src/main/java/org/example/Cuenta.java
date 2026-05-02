@@ -6,22 +6,54 @@ public abstract class Cuenta {
     // Atributos privados
     private String id;
     private String titular;
-    private BigDecimal saldo;
+    private double saldo;
 
 
     // Constructor
-    public Cuenta(String id, String titular, BigDecimal saldo) {
+    public Cuenta(String id, String titular, double saldo) {
         this.id = id;
         this.titular = titular;
         this.saldo = saldo;
     }
-    //METODOS
-    public abstract void depositar(BigDecimal monto);
 
-    public void retirar(BigDecimal monto){
-        if (monto.compareTo(saldo) > 0) {
-            throw new IllegalArgumentException("Saldo insuficiente");
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getTitular() {
+        return titular;
+    }
+
+    public void setTitular(String titular) {
+        this.titular = titular;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
+    //METODOS
+    public abstract void depositar(double monto);
+    public abstract void retirar(double monto);
+
+    public void transferir(Cuenta cuentaDestino, double monto) {
+        System.out.println("Transfiriendo " + monto + " de " + getTitular() + " a " + cuentaDestino.getTitular());
+
+        if (getSaldo() < monto) {
+            throw new SaldoInsuficienteException("Saldo insuficiente para transferir " + monto);
         }
-        saldo = saldo.subtract(monto);
+
+        this.retirar(monto);
+        cuentaDestino.depositar(monto);
+
+        System.out.println("Transferencia exitosamente");
     }
 }
