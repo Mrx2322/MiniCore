@@ -1,4 +1,7 @@
 package org.example;
 
-public interface SaldoInsuficienteException {
+public class SaldoInsuficienteException extends RuntimeException {
+  public SaldoInsuficienteException(String message) {
+    super(message);
+  }
 }

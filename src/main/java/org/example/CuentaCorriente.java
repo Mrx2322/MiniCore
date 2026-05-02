@@ -1,9 +1,7 @@
 package org.example;
 
-import java.math.BigDecimal;
-
 public class CuentaCorriente extends Cuenta{
-    public CuentaCorriente(String id, String titular, java.math.BigDecimal saldo) {
+    public CuentaCorriente(String id, String titular, double saldo) {
         super(id, titular, saldo);
     }
 
