@@ -6,5 +6,4 @@ public class CuentaTest {
     private CuentaAhorros cuentaAhorros;
     private CuentaCorriente cuentaCorriente;
 
-    @BeforeEach
 }

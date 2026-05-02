@@ -1,7 +1,4 @@
 package org.example;
 
-public class MontoInvalidoException extends Exception {
-    public MontoInvalidoException(String message) {
-        super(message);
-    }
+public interface MontoInvalidoException {
 }

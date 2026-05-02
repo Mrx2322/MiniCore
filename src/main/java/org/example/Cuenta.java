@@ -1,6 +1,5 @@
-package org.example;
 
-import java.math.BigDecimal;
+package org.example;
 
 public abstract class Cuenta {
     // Atributos privados
@@ -44,7 +43,7 @@ public abstract class Cuenta {
     public abstract void depositar(double monto);
     public abstract void retirar(double monto);
 
-    public void transferir(Cuenta cuentaDestino, double monto) {
+    public void transferir(Cuenta cuentaDestino, double monto) throws SaldoInsuficienteException {
         System.out.println("Transfiriendo " + monto + " de " + getTitular() + " a " + cuentaDestino.getTitular());
 
         if (getSaldo() < monto) {

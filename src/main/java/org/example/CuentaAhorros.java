@@ -3,7 +3,7 @@ package org.example;
 import java.math.BigDecimal;
 
 public class CuentaAhorros extends Cuenta {
-    public CuentaAhorros(String id, String titular, BigDecimal saldo) {
+    public CuentaAhorros(String id, String titular, double saldo) {
         super(id, titular, saldo);
     }
 
