@@ -40,7 +40,15 @@ public abstract class Cuenta {
     }
 
     //METODOS
-    public abstract void depositar(double monto);
+    public double depositar(double monto) {
+        if (monto > 0) {
+            setSaldo(getSaldo() + monto);
+        } else {
+            throw new MontoInvalidoException("El monto a depositar debe ser positivo");
+        }
+        return getSaldo();
+    }
+
     public abstract void retirar(double monto);
 
     public void transferir(Cuenta cuentaDestino, double monto) throws SaldoInsuficienteException {
