@@ -1,5 +1,5 @@
 
-package org.example;
+package org.example.cuenta;
 
 public abstract class Cuenta {
     // Atributos privados

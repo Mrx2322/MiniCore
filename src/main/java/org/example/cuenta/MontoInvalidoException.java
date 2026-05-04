@@ -1,4 +1,4 @@
-package org.example;
+package org.example.cuenta;
 
 public class MontoInvalidoException extends RuntimeException {
   public MontoInvalidoException(String message) {
